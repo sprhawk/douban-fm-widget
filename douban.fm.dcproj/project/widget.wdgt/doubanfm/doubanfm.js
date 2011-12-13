@@ -1,4 +1,4 @@
-var WIDGET_VERSION = "0.9.11";
+var WIDGET_VERSION = "0.9.12";
 
 var APP_VERSION = 90;
 var APP_NAME = "radio_desktop_mac";
