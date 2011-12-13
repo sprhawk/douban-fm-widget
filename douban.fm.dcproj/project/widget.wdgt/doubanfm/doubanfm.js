@@ -247,8 +247,6 @@ function initializeDoubanfm()
                                     onClickLogin();
                                 }
                             }, true);
-                            
-    updateVersion();
 }
 
 function clearDoubanfm()
@@ -388,7 +386,7 @@ function onMarkFavourite()
         loadSonglist('r', _currentChannel[CHANNEL_ID], _currentSong['sid']);
         setLike(true);
         
-        if (_useGrowl) {
+        if (_useGrowl && window.DoubanfmPlugin) {
                 window.DoubanfmPlugin.growlNotify("为《"+_currentSong['title']+"》加了红心", "Douban fm", _imageData);
         }
     }
@@ -396,7 +394,7 @@ function onMarkFavourite()
         _currentSong[SONG_LIKE] = 0;
         loadSonglist('u', _currentChannel[CHANNEL_ID], _currentSong['sid']);
         setLike(false);
-        if (_useGrowl) {
+        if (_useGrowl && window.DoubanfmPlugin) {
                 window.DoubanfmPlugin.growlNotify("为《"+_currentSong['title']+"》取消红心", "Douban fm", _imageData);
         }
     }
@@ -617,7 +615,7 @@ function playNextSong()
             var canvas = canvasElem.getContext('2d');
             canvas.drawImage(img, 0, 0);
             _imageData = canvas.getImageData(0, 0, width, height);
-            if (_useGrowl) {
+            if (_useGrowl && window.DoubanfmPlugin) {
                 window.DoubanfmPlugin.growlNotify("正在播放:《"+_currentSong['title']+"》", "Douban fm", _imageData);
             }
             var old = document.getElementById('DC_img');

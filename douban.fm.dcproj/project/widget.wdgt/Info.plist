@@ -26,8 +26,6 @@
 	<integer>173</integer>
 	<key>MainHTML</key>
 	<string>main.html</string>
-	<key>Plugin</key>
-	<string>doubanfm.widgetplugin</string>
 	<key>Width</key>
 	<integer>323</integer>
 </dict>
