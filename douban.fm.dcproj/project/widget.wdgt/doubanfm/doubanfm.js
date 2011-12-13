@@ -1,4 +1,4 @@
-var WIDGET_VERSION = "0.9.10";
+var WIDGET_VERSION = "0.9.11";
 
 var APP_VERSION = 90;
 var APP_NAME = "radio_desktop_mac";
@@ -851,5 +851,18 @@ function onChangeChannel(channel, autostart)
         loadSonglist('n', channel_id);
         getPlayer().pause();
         initializePlayer();
+    }
+}
+
+function showAlbum() 
+{
+    if (_currentSong && _currentSong["album"]) {
+        var url = "http://music.douban.com/" + _currentSong["album"];
+        if (window.widget) {
+            widget.openURL(url);
+        }
+        else {
+            window.open(url, "_blank");
+        }
     }
 }

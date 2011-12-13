@@ -388,7 +388,7 @@ input::-webkit-input-placeholder {
     text-align:center;
 }
 
-#image {
+#album_cover {
     position: absolute;
     right: auto;
     bottom: auto;
@@ -401,6 +401,7 @@ input::-webkit-input-placeholder {
     border-top-right-radius: 0px 0px;
     border-bottom-left-radius: 0px 0px;
     border-bottom-right-radius: 0px 0px;
+    cursor:pointer;
 }
 
 #DC_img {
@@ -422,6 +423,7 @@ input::-webkit-input-placeholder {
     border-width: 1px;
     border-color: gray;
 }
+
 
 #back_image {
     position:absolute;
