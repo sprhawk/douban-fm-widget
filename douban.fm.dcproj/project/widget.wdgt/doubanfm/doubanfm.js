@@ -857,7 +857,7 @@ function onChangeChannel(channel, autostart)
 function showAlbum() 
 {
     if (_currentSong && _currentSong["album"]) {
-        var url = "http://music.douban.com/" + _currentSong["album"];
+        var url = "http://music.douban.com" + _currentSong["album"];
         if (window.widget) {
             widget.openURL(url);
         }
