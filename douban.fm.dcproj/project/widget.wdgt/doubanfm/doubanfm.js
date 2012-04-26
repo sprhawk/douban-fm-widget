@@ -298,7 +298,7 @@ function onProgress(e)
 function onEnded(e)
 {
     console.log('onEnded');
-    loadSonglist('p', _currentChannel[CHANNEL_ID], _currentSong['sid'], false);
+    loadSonglist('e', _currentChannel[CHANNEL_ID], _currentSong['sid'], false);
     initializePlayer();
     playNextSong();
 }
