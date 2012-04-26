@@ -1,4 +1,4 @@
-var WIDGET_VERSION = "0.9.12";
+var WIDGET_VERSION = "0.9.14";
 
 var APP_VERSION = 90;
 var APP_NAME = "radio_desktop_mac";
@@ -298,6 +298,7 @@ function onProgress(e)
 function onEnded(e)
 {
     console.log('onEnded');
+    loadSonglist('p', _currentChannel[CHANNEL_ID], _currentSong['sid'], false);
     initializePlayer();
     playNextSong();
 }
@@ -550,10 +551,11 @@ function loadChannellist()
 }
 
 
-function loadSonglist(type, channel_id, sid)
+function loadSonglist(type, channel_id, sid, play)
 {
     type = undefined === type?'n':type;
     channel = undefined === channel_id?0:channel_id;
+    play = undefined === play?true:play
 
     var request = new XMLHttpRequest();
     
@@ -572,7 +574,9 @@ function loadSonglist(type, channel_id, sid)
             if('application/json' == responseType.substr(0,16)) {
                 ret = JSON.parse(request.responseText);
                 if (0 == ret['r']) {
-                    playSongsFromInfo(ret['song']);
+                    if (play) {
+                        playSongsFromInfo(ret['song']);
+                    }
                 }
                 else {
                     console.log('error:' + request.responseText);
